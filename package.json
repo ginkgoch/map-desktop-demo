@@ -28,6 +28,7 @@
     "ginkgoch-leaflet-extensions": "^1.0.0",
     "ginkgoch-map": "^1.9.0",
     "leaflet": "^1.6.0",
+    "lodash": "^4.17.15",
     "vue-cli-plugin-electron-builder": "~1.4.5",
     "vue-router": "^3.1.5",
     "vue-template-compiler": "^2.6.11"

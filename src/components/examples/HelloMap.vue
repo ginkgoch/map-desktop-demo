@@ -9,6 +9,10 @@ import L from 'leaflet'
 
 export default {
     name: 'hello-map',
+    path: '',
+    title: 'Hello Map',
+    route: 'HelloMap',
+    desc: `Build a simple desktop map application with few lines of code.`,
     data() {
         return {}
     },

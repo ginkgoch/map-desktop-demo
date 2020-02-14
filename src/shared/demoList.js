@@ -1,19 +1,19 @@
-import HelloMap from '@/components/examples/HelloMap'
-import LoadShapefile from '@/components/examples/LoadShapefile'
+import _ from 'lodash';
+import examples from '../components/examples';
 
-export default [
-    [
-        "HelloMap",
-        "Hello Map",
-        "",
-        "Build a simple desktop map application with few lines of code.",
-        HelloMap
-    ],
-    [
-        "LoadShapefile",
-        "Load a Shapefile",
-        "load-shapefile",
-        "Load a shapefile from your local machine and render on map.",
-        LoadShapefile
-    ]
-]
+function getExampleInfo(example) {
+    let { name, route, title, path, desc } = example;
+    if (name === undefined) {
+        throw new Error('name not defined.');
+    }
+
+    path = path === undefined ? name : path;
+    title = title || _.startCase(name);
+    route = route || name;
+    desc = desc || '';
+    return [route, title, path, desc, example];
+}
+
+export default examples.map(example => {
+    return getExampleInfo(example);
+});

@@ -9,6 +9,10 @@ import L from 'leaflet'
 
 export default {
     name: 'load-shapefile',
+    path: 'load-shapefile',
+    title: 'Load a Shapefile',
+    route: 'LoadShapefile',
+    desc: `Load a shapefile from your local machine and render on map.`,
     data() {
         return {}
     },
