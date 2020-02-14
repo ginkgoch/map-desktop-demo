@@ -1,11 +1,10 @@
 <template>
   <div class="container">
-      <div id="mapContainer">Hello Map</div>
+      <div id="mapContainer"></div>
   </div>
 </template>
 
 <script>
-import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
 
 export default {

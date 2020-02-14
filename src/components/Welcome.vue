@@ -56,4 +56,8 @@ li {
 a {
   color: #42b983;
 }
+
+.hello img {
+  margin-top: 60px;
+}
 </style>

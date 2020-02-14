@@ -1,20 +1,120 @@
 <template>
-  <div class="container">
-      <router-link to="/">Back to Welcome</router-link>
-      <router-view></router-view>
+  <div>
+    <div class="container-fluid nav-logo">
+      <h2 class="container">
+        <router-link to="/">
+          <img src="../assets/logo.png" />
+        </router-link>
+        <span>Ginkgoch MAP Examples</span>
+      </h2>
+    </div>
+
+    <div class="container content-container">
+      <div class="row">
+        <div class="col-md-4 side-panel">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" v-for="(item, key) in sampleList" :key="key">
+              <a href="javascript:void(0)" @click="routerLinkClick(item[2], $event)">{{ item[0] }}</a>
+              <p>
+                <small class="text-muted">{{ item[3] }}</small>
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-8 demo-container">
+          <h3>{{ title }}</h3>
+          <p>{{ desc }}</p>
+          <router-view></router-view>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import 'bootstrap/dist/css/bootstrap.min.css'
-export default {
-    name: 'map-app'
+import "bootstrap/dist/css/bootstrap.min.css";
+import "leaflet/dist/leaflet.css";
+import sampleList from '../shared/demoList';
+
+function getDemoInfo(path) {
+    path = path.replace('/map-app', '');
+    path = path.replace(/^\//i, '');
+    path = sampleList.find(s => s[2] === path);
+    return { title: path[1], desc: path[3] };
 }
+
+export default {
+  name: "map-app",
+  data() {
+    return {
+      title: '',
+      desc: '',
+      sampleList
+    };
+  },
+  mounted() {
+    let path = this.$router.currentRoute.path;
+    let demo = getDemoInfo(path);
+    this.title = demo.title;
+    this.desc = demo.desc;
+  },
+  methods: {
+    routerLinkClick(name) {
+      let path = '/map-app/' + name;
+      path = path.replace(/\/$/i, '');
+      if (path !== this.$router.currentRoute.path) {
+        this.$router.replace(path);
+        let demo = getDemoInfo(path);
+        this.title = demo.title;
+        this.desc = demo.desc;
+      }
+    }
+  }
+};
 </script>
 
 <style>
 #mapContainer {
-    height: 400px;
-    background-color: #f0f0f0;
+  height: 400px;
+  background-color: #f0f0f0;
+  border: solid 1px #c0c0c0;
+}
+
+ul p {
+  margin-bottom: 0px;
+}
+
+.container {
+  text-align: left;
+}
+
+.nav-logo {
+  background-color: white;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1)
+}
+
+.nav-logo img {
+  width: 44px;
+  margin: 14px;
+}
+
+.nav-logo span {
+  line-height: 72px;
+}
+
+.side-panel a:link {
+  color: #2e983e;
+}
+
+.side-panel a:active {
+  color: #42b983;
+}
+
+.content-container {
+    margin-top: 2rem;
+}
+
+.demo-container h3, .demo-container p {
+  margin: 0.5rem 0 0.5rem 1rem;
 }
 </style>

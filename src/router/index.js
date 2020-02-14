@@ -2,11 +2,11 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Welcome from '@/components/Welcome'
 import MapApp from '@/components/MapApp'
-import HelloMap from '@/components/examples/HelloMap'
-import LoadShapefile from '@/components/examples/LoadShapefile'
+import demoList from '../shared/demoList';
 
 Vue.use(Router)
 
+const defaultDemoName = 'HelloMap'
 export default new Router({
     routes: [
         {
@@ -18,10 +18,13 @@ export default new Router({
             path: '/map-app',
             name: 'MapApp',
             component: MapApp,
-            children: [
-                { path: '', component: HelloMap, name: 'HelloMap' },
-                { path: 'load-shapefile', component: LoadShapefile, name: 'LoadShapefile' }
-            ]
+            children: demoList.map(demo => {
+                return {
+                    path: demo[0] === defaultDemoName ? '' : demo[2],
+                    component: demo[4],
+                    name: demo[0]
+                }
+            })
         }
     ]
 });
