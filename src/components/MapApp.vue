@@ -14,9 +14,9 @@
         <div class="col-md-4 side-panel">
           <ul class="list-group list-group-flush">
             <li class="list-group-item" v-for="(item, key) in sampleList" :key="key">
-              <a href="javascript:void(0)" @click="routerLinkClick(item[2], $event)">{{ item[0] }}</a>
+              <a href="javascript:void(0)" @click="routerLinkClick(item.path, $event)">{{ item.route }}</a>
               <p>
-                <small class="text-muted">{{ item[3] }}</small>
+                <small class="text-muted">{{ item.desc }}</small>
               </p>
             </li>
           </ul>
@@ -39,8 +39,8 @@ import sampleList from '../shared/demoList';
 function getDemoInfo(path) {
     path = path.replace('/map-app', '');
     path = path.replace(/^\//i, '');
-    path = sampleList.find(s => s[2] === path);
-    return { title: path[1], desc: path[3] };
+    let demo = sampleList.find(s => s.path === path);
+    return { title: demo.title, desc: demo.desc };
 }
 
 export default {

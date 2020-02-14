@@ -6,7 +6,6 @@ import demoList from '../shared/demoList';
 
 Vue.use(Router)
 
-const defaultDemoName = 'HelloMap'
 export default new Router({
     routes: [
         {
@@ -20,9 +19,9 @@ export default new Router({
             component: MapApp,
             children: demoList.map(demo => {
                 return {
-                    path: demo[0] === defaultDemoName ? '' : demo[2],
-                    component: demo[4],
-                    name: demo[0]
+                    path: demo.path,
+                    component: demo.component,
+                    name: demo.route
                 }
             })
         }

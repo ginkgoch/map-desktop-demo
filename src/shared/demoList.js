@@ -1,8 +1,8 @@
 import _ from 'lodash';
 import examples from '../components/examples';
 
-function getExampleInfo(example) {
-    let { name, route, title, path, desc } = example;
+function getExampleInfo(component) {
+    let { name, route, title, path, desc } = component;
     if (name === undefined) {
         throw new Error('name not defined.');
     }
@@ -11,9 +11,7 @@ function getExampleInfo(example) {
     title = title || _.startCase(name);
     route = route || name;
     desc = desc || '';
-    return [route, title, path, desc, example];
+    return { route, title, path, desc, component };
 }
 
-export default examples.map(example => {
-    return getExampleInfo(example);
-});
+export default examples.map(getExampleInfo);
