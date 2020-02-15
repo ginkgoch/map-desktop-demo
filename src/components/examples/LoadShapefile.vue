@@ -6,6 +6,7 @@
 
 <script>
 import L from 'leaflet'
+import Constants from '../../shared/Constants'
 
 export default {
     name: 'load-shapefile',
@@ -18,9 +19,7 @@ export default {
     },
     mounted() {
         let map = L.map('mapContainer').setView([0, 0], 3);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">Ginkgoch & OpenStreetMap</a> contributors'
-        }).addTo(map);
+        L.tileLayer(Constants.OSM_SERVICE_URL, { attribution: Constants.OSM_ATTRIBUTION }).addTo(map)
     }
 }
 </script>

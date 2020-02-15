@@ -23,7 +23,7 @@
         </div>
         <div class="col-md-8 demo-container">
           <h3>{{ title }}</h3>
-          <p>{{ desc }}</p>
+          <p class="text-muted">{{ desc }} <span v-html="detail" /></p>
           <router-view></router-view>
         </div>
       </div>
@@ -34,13 +34,13 @@
 <script>
 import "bootstrap/dist/css/bootstrap.min.css";
 import "leaflet/dist/leaflet.css";
-import sampleList from '../shared/demoList';
+import sampleList from '../shared/DemoList';
 
 function getDemoInfo(path) {
     path = path.replace('/map-app', '');
     path = path.replace(/^\//i, '');
     let demo = sampleList.find(s => s.path === path);
-    return { title: demo.title, desc: demo.desc };
+    return { title: demo.title, desc: demo.desc, detail: demo.detail };
 }
 
 export default {
@@ -49,14 +49,13 @@ export default {
     return {
       title: '',
       desc: '',
+      detail: '',
       sampleList
     };
   },
   mounted() {
     let path = this.$router.currentRoute.path;
-    let demo = getDemoInfo(path);
-    this.title = demo.title;
-    this.desc = demo.desc;
+    this.setDemoInfo(path);
   },
   methods: {
     routerLinkClick(name) {
@@ -64,10 +63,14 @@ export default {
       path = path.replace(/\/$/i, '');
       if (path !== this.$router.currentRoute.path) {
         this.$router.replace(path);
-        let demo = getDemoInfo(path);
-        this.title = demo.title;
-        this.desc = demo.desc;
+        this.setDemoInfo(path);
       }
+    },
+    setDemoInfo(path) {
+      let demo = getDemoInfo(path);
+      this.title = demo.title;
+      this.desc = demo.desc;
+      this.detail = demo.detail;
     }
   }
 };

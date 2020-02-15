@@ -6,6 +6,7 @@
 
 <script>
 import L from 'leaflet'
+import Constants from '../../shared/Constants'
 
 export default {
     name: 'hello-map',
@@ -13,14 +14,13 @@ export default {
     title: 'Hello Map',
     route: 'HelloMap',
     desc: `Build a simple desktop map application with few lines of code.`,
+    detail: `This is a pure map with Leaflet integrated. We will show you all the <b>Ginkgoch MAP SDK</b> features based on this demo.`,
     data() {
         return {}
     },
     mounted() {
-        let map = L.map('mapContainer').setView([0, 0], 3);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
+        let map = L.map('mapContainer').setView([0, 0], 3)
+        L.tileLayer(Constants.OSM_SERVICE_URL, { attribution: Constants.OSM_ATTRIBUTION }).addTo(map)
     }
 }
 </script>
