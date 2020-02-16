@@ -14,7 +14,7 @@
         <div class="col-md-4 side-panel">
           <ul class="list-group list-group-flush">
             <li class="list-group-item" v-for="(item, key) in sampleList" :key="key">
-              <a href="javascript:void(0)" @click="routerLinkClick(item.path, $event)">{{ item.route }}</a>
+              <a href="javascript:void(0)" @click="routerLinkClick(item.path, $event)">{{ item.title }}</a>
               <p>
                 <small class="text-muted">{{ item.desc }}</small>
               </p>
@@ -119,5 +119,9 @@ ul p {
 
 .demo-container h3, .demo-container p {
   margin: 0.5rem 0 0.5rem 1rem;
+}
+
+.btn {
+  margin: 8px 4px;
 }
 </style>
