@@ -41,19 +41,10 @@ export default {
       attribution: Constants.OSM_ATTRIBUTION
     }).addTo(map);
 
-    let style = {
-      radius: 8,
-      fillColor: "#ff7800",
-      color: "#000",
-      weight: 4,
-      opacity: 1,
-      fillOpacity: 0.4
-    };
-
     geomLayer = L.geoJSON([], {
-      style,
+      style: Constants.DEFAULT_GEO_JSON_STYLE,
       pointToLayer(feature, latlng) {
-        return L.circleMarker(latlng, style);
+        return L.circleMarker(latlng, Constants.DEFAULT_GEO_JSON_STYLE);
       }
     });
 
