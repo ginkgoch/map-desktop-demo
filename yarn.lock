@@ -4335,10 +4335,10 @@ ginkgoch-filestream@^1.0.0:
   resolved "https://registry.npm.taobao.org/ginkgoch-filestream/download/ginkgoch-filestream-1.0.0.tgz#3c10c5fbf071923996a2ca5fd542286ac25811f2"
   integrity sha1-PBDF+/BxkjmWospf1UIoasJYEfI=
 
-ginkgoch-geom@^1.8.0:
-  version "1.8.0"
-  resolved "https://registry.npm.taobao.org/ginkgoch-geom/download/ginkgoch-geom-1.8.0.tgz#08c30a5d3f3e4dee3ce00fe00d08532ca20f2fb8"
-  integrity sha1-CMMKXT8+Te484A/gDQhTLKIPL7g=
+ginkgoch-geom@^1.9.0:
+  version "1.9.0"
+  resolved "https://registry.npm.taobao.org/ginkgoch-geom/download/ginkgoch-geom-1.9.0.tgz#981e4b946acc869764f85d28c36f47a005c9d84d"
+  integrity sha1-mB5LlGrMhpdk+F0ow29HoAXJ2E0=
   dependencies:
     "@types/jsts" "^0.17.0"
     "@types/lodash" "^4.14.136"
@@ -4352,32 +4352,32 @@ ginkgoch-leaflet-extensions@^1.0.0:
   resolved "https://registry.npm.taobao.org/ginkgoch-leaflet-extensions/download/ginkgoch-leaflet-extensions-1.0.0.tgz#da9fb1948cf02da703152bc0df7bdc81d27f9aaa"
   integrity sha1-2p+xlIzwLacDFSvA33vcgdJ/mqo=
 
-ginkgoch-map@^1.9.0:
-  version "1.9.0"
-  resolved "https://registry.npm.taobao.org/ginkgoch-map/download/ginkgoch-map-1.9.0.tgz#335c13108d8e55aa7c2b308f6a8626517092429a"
-  integrity sha1-M1wTEI2OVap8KzCPaoYmUXCSQpo=
+ginkgoch-map@^1.10.0:
+  version "1.10.0"
+  resolved "https://registry.npm.taobao.org/ginkgoch-map/download/ginkgoch-map-1.10.0.tgz#d260d573286b8254b96cf9aa2d5df756cfe9a4be"
+  integrity sha1-0mDVcyhrglS5bPmqLV33Vs/ppL4=
   dependencies:
     "@types/lodash" "^4.14.136"
     "@types/proj4" "^2.5.0"
     csv-parse "^4.8.3"
     ginkgoch-buffer-io "^1.1.3"
     ginkgoch-filestream "^1.0.0"
-    ginkgoch-geom "^1.8.0"
-    ginkgoch-shapefile "^2.4.0"
+    ginkgoch-geom "^1.9.0"
+    ginkgoch-shapefile "^2.5.0"
     lodash "^4.17.15"
     proj4 "^2.5.0"
 
-ginkgoch-shapefile@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.npm.taobao.org/ginkgoch-shapefile/download/ginkgoch-shapefile-2.4.0.tgz#c7a72f87cbaaa611155ba1b5f25c48ad5694513d"
-  integrity sha1-x6cvh8uqphEVW6G18lxIrVaUUT0=
+ginkgoch-shapefile@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.npm.taobao.org/ginkgoch-shapefile/download/ginkgoch-shapefile-2.5.0.tgz#bf9d3bda410921934a1d40fa688d102a143eac55"
+  integrity sha1-v5072kEJIZNKHUD6aI0QKhQ+rFU=
   dependencies:
     "@types/jsts" "^0.17.0"
     "@types/lodash" "^4.14.136"
     "@types/node" "^12.6.8"
     ginkgoch-buffer-io "^1.1.3"
     ginkgoch-filestream "^1.0.0"
-    ginkgoch-geom "^1.8.0"
+    ginkgoch-geom "^1.9.0"
     lodash "^4.17.14"
 
 glob-parent@^3.1.0:
