@@ -4347,10 +4347,10 @@ ginkgoch-geom@^1.10.0:
     jsts "^2.0.6"
     lodash "^4.17.15"
 
-ginkgoch-leaflet-extensions@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npm.taobao.org/ginkgoch-leaflet-extensions/download/ginkgoch-leaflet-extensions-1.0.0.tgz#da9fb1948cf02da703152bc0df7bdc81d27f9aaa"
-  integrity sha1-2p+xlIzwLacDFSvA33vcgdJ/mqo=
+ginkgoch-leaflet-extensions@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/ginkgoch-leaflet-extensions/-/ginkgoch-leaflet-extensions-1.1.0.tgz#044ed4e31eb6dfd8efd6651fb0ce4d85fe3b5bf0"
+  integrity sha512-mMS/p/eRWb7KvzSlwCaMeBjJtI2eRNk2nZ2hpqVuP5PKJCPDCZTW6Cd43sACekScmrZ72WJ+VnDNt8GF9YyhcA==
 
 ginkgoch-map@^1.11.0:
   version "1.11.0"
