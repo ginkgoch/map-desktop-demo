@@ -24,7 +24,9 @@
         <div class="col-md-8 demo-container">
           <h3>{{ title }}</h3>
           <p class="text-muted">{{ desc }} <span v-html="detail" /></p>
-          <router-view></router-view>
+          <div class="container">
+            <router-view></router-view>
+          </div>
         </div>
       </div>
     </div>
@@ -123,5 +125,9 @@ ul p {
 
 .btn {
   margin: 8px 4px;
+}
+
+.dropdown {
+  display: inline-block;
 }
 </style>

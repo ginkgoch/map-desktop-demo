@@ -1,7 +1,7 @@
 <template>
-  <div class="container">
+  <div>
     <div id="mapContainer"></div>
-    <div class="row">
+    <div>
       <button
         type="button"
         class="btn btn-outline-success"
