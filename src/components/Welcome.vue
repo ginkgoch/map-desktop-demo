@@ -3,39 +3,37 @@
     <img alt="Vue logo" src="../assets/logo.png">
     <h1>{{ msg }}</h1>
     <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
+      For a guide and recipes on how to build GIS desktop application with Ginkgoch,<br>
+      check out the following demos with standalone features.
     </p>
-    <h3>Installed CLI Plugins</h3>
+    <h3>Geometries</h3>
     <ul>
-      <li><router-link to="/map-app">Simple MAP</router-link></li>
-      <li><router-link to="/map-app/load-shapefile">Load Shapefile</router-link></li>
+      <li v-for="(demo, key) of demos" :key="key">
+        <router-link :to="'/map-app/' + demo.path">{{ demo.title }}</router-link>
+      </li>
     </ul>
     <h3>Essential Links</h3>
     <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
+      <li><a href="https://ginkgoch.com" target="_blank" rel="noopener">Website</a></li>
+      <li><a href="https://ginkgoch.com/index.html#contact" target="_blank" rel="noopener">Contact</a></li>
+      <li><a href="https://blog.ginkgoch.com" target="_blank" rel="noopener">Blog &amp; News</a></li>
+      <li><a href="https://paypal.me/ginkgoch101" target="_blank" rel="noopener">Donate</a></li>
     </ul>
   </div>
 </template>
 
 <script>
+import DemoList from '../shared/DemoList'
+
 export default {
   name: 'Welcome',
   props: {
     msg: String
+  },
+  data() {
+    return {
+      demos: DemoList
+    }
   }
 }
 </script>

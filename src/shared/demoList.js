@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import examples from '../components/examples';
+import demos from '../components/demos';
 
 function getExampleInfo(component) {
     let { name, route, title, path, desc, detail } = component;
@@ -15,4 +15,4 @@ function getExampleInfo(component) {
     return { route, title, path, desc, detail, component };
 }
 
-export default examples.map(getExampleInfo);
+export default demos.map(getExampleInfo);

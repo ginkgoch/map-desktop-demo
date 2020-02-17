@@ -5,7 +5,7 @@
         <router-link to="/">
           <img src="../assets/logo.png" />
         </router-link>
-        <span>Ginkgoch MAP Examples</span>
+        <span>Ginkgoch MAP DEMOs</span>
       </h2>
     </div>
 
