@@ -117,6 +117,20 @@ ul p {
 
 .content-container {
     margin-top: 2rem;
+    height: calc(100% - 140px);
+}
+
+.content-container>.row {
+  height: 100%;
+}
+
+.content-container>.row>.side-panel {
+  height: 100%;
+}
+
+.content-container>.row>.side-panel>ul {
+  overflow-y: auto;
+  height: 100%;;
 }
 
 .demo-container h3, .demo-container p {
