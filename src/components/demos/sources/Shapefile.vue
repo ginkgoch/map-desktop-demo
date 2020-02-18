@@ -8,9 +8,9 @@
 </template>
 
 <script>
-import path from 'path';
 import L from "leaflet";
 import Constants from "../../../shared/Constants";
+import DemoUtils from '../../../shared/DemoUtils';
 import { FeatureGridLayer } from 'ginkgoch-leaflet-extensions';
 import { ShapefileFeatureSource, FeatureLayer, GeneralStyle } from 'ginkgoch-map';
 
@@ -32,10 +32,10 @@ export default {
         return;
       }
 
-      let featureSource = new ShapefileFeatureSource(path.join(process.resourcesPath, 'extraResources/cntry02.shp'));
+      let featureSource = new ShapefileFeatureSource(DemoUtils.resolveExtraResourcePath('cntry02.shp'));
 
       let featureLayer = new FeatureLayer(featureSource);
-      featureLayer.styles.push(new GeneralStyle('#fff7bc', '#d95f0e', 4, 8))
+      featureLayer.styles.push(new GeneralStyle('#fff7bc', '#d95f0e', 1))
 
       this.gridLayer = new FeatureGridLayer();
       this.gridLayer.pushLayer(featureLayer);
