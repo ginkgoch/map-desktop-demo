@@ -13,9 +13,6 @@ import Constants from "../../../shared/Constants";
 import { FeatureGridLayer } from 'ginkgoch-leaflet-extensions';
 import { MemoryFeatureSource, FeatureLayer, GeometryFactory, Feature, Projection, GeneralStyle } from 'ginkgoch-map';
 
-let map = null;
-let gridLayer = null;
-
 export default {
   name: "memory-source",
   title: "In-Memory Source",
@@ -25,28 +22,28 @@ export default {
     return {};
   },
   mounted() {
-    map = L.map("mapContainer").setView([0, 0], 2);
-    L.tileLayer(Constants.OSM_SERVICE_URL, Constants.DEFAULT_OSM_OPTIONS).addTo(map);
+    this.map = L.map("mapContainer").setView([0, 0], 2);
+    L.tileLayer(Constants.OSM_SERVICE_URL, Constants.DEFAULT_OSM_OPTIONS).addTo(this.map);
   },
   methods: {
     addAMemoryFeatureLayer() {
-      if (gridLayer !== null) {
+      if (this.gridLayer !== undefined) {
         return;
       }
 
-      let memoryFeatureSource = new MemoryFeatureSource();
-      memoryFeatureSource.push(new Feature(GeometryFactory.buildCircle({x: -40, y: 40}, 30)));
-      memoryFeatureSource.push(new Feature(GeometryFactory.buildSquare({x: 40, y: 40}, 30)));
-      memoryFeatureSource.push(new Feature(GeometryFactory.buildStar({x: -40, y: -40}, 8, 30, 15)));
-      memoryFeatureSource.push(new Feature(GeometryFactory.buildEllipse({x: 40, y: -40}, 30, 20)));
-      memoryFeatureSource.projection = new Projection('WGS84', 'EPSG:3857');
+      let featureSource = new MemoryFeatureSource();
+      featureSource.push(new Feature(GeometryFactory.buildCircle({x: -40, y: 40}, 30)));
+      featureSource.push(new Feature(GeometryFactory.buildSquare({x: 40, y: 40}, 30)));
+      featureSource.push(new Feature(GeometryFactory.buildStar({x: -40, y: -40}, 8, 30, 15)));
+      featureSource.push(new Feature(GeometryFactory.buildEllipse({x: 40, y: -40}, 30, 20)));
+      featureSource.projection = new Projection('WGS84', 'EPSG:3857');
 
-      let featureLayer = new FeatureLayer(memoryFeatureSource);
+      let featureLayer = new FeatureLayer(featureSource);
       featureLayer.styles.push(new GeneralStyle('#fff7bc', '#d95f0e', 4, 8))
 
-      gridLayer = new FeatureGridLayer();
-      gridLayer.pushLayer(featureLayer);
-      gridLayer.addTo(map);
+      this.gridLayer = new FeatureGridLayer();
+      this.gridLayer.pushLayer(featureLayer);
+      this.gridLayer.addTo(this.map);
     }
   }
 };
