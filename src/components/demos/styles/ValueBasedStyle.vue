@@ -10,7 +10,7 @@
       >{{ Math.trunc(item.value) }}</li>
     </ul>
     <section>
-      <button class="btn btn-outline-success" @click="addValueStyle">Add a value based style</button>
+      <button class="btn btn-outline-success" @click="addValueStyle">Add a ValueStyle Based on COLOR_MAP</button>
     </section>
   </div>
 </template>
@@ -67,21 +67,3 @@ export default {
   }
 };
 </script>
-
-<style>
-.legend {
-  width: 80px;
-  position: absolute;
-  margin-left: 10px;
-  z-index: 1000;
-  list-style: none;
-  padding: 0px;
-  background: white;
-}
-
-.legend li {
-  font-size: 10px;
-  line-height: 16px;
-  padding-left: 4px;
-}
-</style>

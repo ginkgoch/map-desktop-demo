@@ -133,6 +133,10 @@ ul p {
   height: 100%;;
 }
 
+.demo-container>div.container>div {
+  position: relative;
+}
+
 .demo-container h3, .demo-container p {
   margin: 0.5rem 0 0.5rem 1rem;
 }
@@ -143,5 +147,22 @@ ul p {
 
 .dropdown {
   display: inline-block;
+}
+
+.legend {
+  width: 80px;
+  position: absolute;
+  margin-left: 10px;
+  z-index: 1000;
+  list-style: none;
+  padding: 0px;
+  background: white;
+  bottom: 44px;
+}
+
+.legend li {
+  font-size: 10px;
+  line-height: 16px;
+  padding-left: 4px;
 }
 </style>
