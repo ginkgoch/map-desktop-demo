@@ -26,8 +26,8 @@
 import L from "leaflet";
 import Constants from "../../../shared/Constants";
 import DemoUtils from '../../../shared/DemoUtils';
-import { FeatureGridLayer } from 'ginkgoch-leaflet-extensions';
-import { FeatureLayer, GeneralStyle, CSVFeatureSource, Projection, ViewportUtils } from 'ginkgoch-map';
+import { FeatureGridLayer, MapUtils } from 'ginkgoch-leaflet-extensions';
+import { FeatureLayer, GeneralStyle, CSVFeatureSource, Projection } from 'ginkgoch-map';
 
 export default {
   name: "csv-source",
@@ -63,10 +63,7 @@ export default {
 
       await featureLayer.open();
       let envelope = await featureLayer.envelope();
-
-      let { x, y } = this.map.getSize();
-      let viewportInfo = ViewportUtils.getInitViewport(envelope, x, y);
-      this.map.setView([viewportInfo.lat, viewportInfo.lng], viewportInfo.zoom);
+      MapUtils.setEnvelope(this.map, envelope);
     },
     async renderProperties() {
       let options = { geomField: { x: 'longitude', y: 'latitude' }, hasFieldsRow: true };

@@ -11,8 +11,8 @@
 import L from "leaflet";
 import Constants from "../../../shared/Constants";
 import DemoUtils from '../../../shared/DemoUtils';
-import { FeatureGridLayer } from 'ginkgoch-leaflet-extensions';
-import { MultiSourceFeatureLayer, GeoJSONFeatureSource, Projection, ViewportUtils, ShapefileFeatureSource, FillStyle, PointStyle } from 'ginkgoch-map';
+import { MultiSourceFeatureLayer, GeoJSONFeatureSource, Projection , ShapefileFeatureSource, FillStyle, PointStyle } from 'ginkgoch-map';
+import { FeatureGridLayer, MapUtils } from 'ginkgoch-leaflet-extensions';
 
 export default {
   name: "multi-source",
@@ -50,9 +50,7 @@ export default {
       await featureLayer.open();
       let envelope = await featureLayer.envelope();
 
-      let { x, y } = this.map.getSize();
-      let viewportInfo = ViewportUtils.getInitViewport(envelope, x, y);
-      this.map.setView([viewportInfo.lat, viewportInfo.lng], viewportInfo.zoom);
+      MapUtils.setEnvelope(this.map, envelope);
     }
   }
 };
