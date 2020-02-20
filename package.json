@@ -12,7 +12,9 @@
     "postuninstall": "electron-builder install-app-deps"
   },
   "main": "background.js",
-  "dependencies": {},
+  "dependencies": {
+    "ginkgoch-map": "^1.11.5"
+  },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.2.0",
     "@vue/cli-plugin-eslint": "~4.2.0",
