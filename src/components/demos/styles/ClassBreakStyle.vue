@@ -63,12 +63,8 @@ export default {
 
       if (this.classBreakStyle === undefined) {
         await this.featureLayer.open();
-        let aggregator = await this.featureLayer.source.propertyAggregator([
-          FIELD_NAME
-        ]);
-        let generalInfo = aggregator.general(FIELD_NAME);
-        this.classBreakStyle = ClassBreakStyle.auto("fill", FIELD_NAME, generalInfo.maximum, generalInfo.minimum, 
-          10, "#f7fbff", "#08306b", "#252525", 1);
+        let aggregator = await this.featureLayer.source.propertyAggregator([FIELD_NAME]);
+        this.classBreakStyle = ClassBreakStyle.autoByAggregator('fill', FIELD_NAME, aggregator, 10, 'position', { fromColor: '#f7fbff', toColor: '#08306b', strokeColor: '#252525', strokeWidth: 1 });
 
         this.featureLayer.styles.length = 0;
         this.featureLayer.styles.push(this.classBreakStyle);
