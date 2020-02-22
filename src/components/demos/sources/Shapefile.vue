@@ -9,18 +9,7 @@
       <button class="btn btn-outline-success" @click="renderProperties(undefined)">Get Shapefile Properties (Slower than Top 5)</button>
     </section>
     <section class="table-container">
-      <table class="table table-sm" v-if="tableSource.length > 0">
-        <thead>
-          <tr>
-            <th v-for="(cell, k) of tableSource[0]" :key="k">{{ cell }}</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(row, rkey) of tableSource.slice(1)" :key="rkey">
-            <td v-for="(cell, ckey) of row" :key="ckey" class="small">{{ cell }}</td>
-          </tr>
-        </tbody>
-      </table>
+      <Table :source="tableSource" />
     </section>
   </div>
 </template>
@@ -32,12 +21,14 @@ import Constants from "../../../shared/Constants";
 import DemoUtils from '../../../shared/DemoUtils';
 import { FeatureGridLayer } from 'ginkgoch-leaflet-extensions';
 import { ShapefileFeatureSource, FeatureLayer, GeneralStyle, ShapefileType } from 'ginkgoch-map';
+import Table from '@/components/controls/Table';
 
 export default {
   name: "shapefile-source",
   title: "Shapefile Source",
   desc: `Use shapefile source to query and render on map.`,
   detail: `Shapefile source is used to fetch features from a specific shape file on your local machine; it exposes a set of API to query and render on map.`,
+  components: { 'Table': Table },
   data() {
     return {
       tableSource: [],

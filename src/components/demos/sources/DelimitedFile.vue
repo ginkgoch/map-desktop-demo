@@ -5,19 +5,8 @@
       <button class="btn btn-outline-success" @click="addFeatureLayer">Add a FeatureLayer with Delimited File</button>
       <button class="btn btn-outline-success" @click="renderProperties">Get Delimited File Properties</button>
     </section>
-    <section class="table-container">
-      <table class="table table-sm" v-if="tableSource.length > 0">
-        <thead>
-          <tr>
-            <th v-for="(cell, k) of tableSource[0]" :key="k">{{ cell }}</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(row, rkey) of tableSource.slice(1)" :key="rkey">
-            <td v-for="(cell, ckey) of row" :key="ckey" class="small">{{ cell }}</td>
-          </tr>
-        </tbody>
-      </table>
+    <section>
+      <feature-table :features="tableSource" />
     </section>
   </div>
 </template>
@@ -28,12 +17,16 @@ import Constants from "../../../shared/Constants";
 import DemoUtils from '../../../shared/DemoUtils';
 import { FeatureGridLayer, MapUtils } from 'ginkgoch-leaflet-extensions';
 import { FeatureLayer, GeneralStyle, CSVFeatureSource, Projection } from 'ginkgoch-map';
+import FeatureTable from '@/components/controls/FeatureTable';
 
 export default {
   name: "csv-source",
   title: "Delimited File Source",
   desc: `Use CSV source to query and render on map.`,
   detail: `CSV source is used to fetch features from a specific delimited file on your local machine; it exposes a set of API to query and render on map.`,
+  components: {
+    'feature-table': FeatureTable
+  },
   data() {
     return {
       tableSource: [],
@@ -73,26 +66,8 @@ export default {
       let features = null;
       features = await featureSource.features();
 
-      this.tableSource = featuresToTableSource(features);
+      this.tableSource = features;
     }
   }
 };
-
-function featuresToTableSource(features) {
-  let tableSource = [];
-  if (features.length > 0) {
-    tableSource.push(features[0].properties.keys());
-  }
-
-  features.forEach(f => tableSource.push(f.properties.values()));
-
-  return tableSource;
-}
 </script>
-
-<style>
-.table-container {
-  max-height: 400px;
-  overflow-y: auto;
-}
-</style>

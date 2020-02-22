@@ -5,19 +5,8 @@
       <dropdown title="Select a Spatial Relationship" :items="relationships" @changed="onChanged" />
       <small class="text-muted text-sm">{{ summary }}</small>
     </section>
-    <section class="table-container">
-      <table class="table table-sm" v-if="tableSource.length > 0">
-        <thead>
-          <tr>
-            <th v-for="(cell, k) of tableSource[0]" :key="k">{{ cell }}</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(row, rkey) of tableSource.slice(1)" :key="rkey">
-            <td v-for="(cell, ckey) of row" :key="ckey" class="small">{{ cell }}</td>
-          </tr>
-        </tbody>
-      </table>
+    <section>
+      <feature-table :features="tableSource" /> 
     </section>
   </div>
 </template>
@@ -30,6 +19,7 @@ import DemoUtils from '../../../shared/DemoUtils';
 import { FeatureGridLayer, MapUtils } from 'ginkgoch-leaflet-extensions';
 import { FeatureLayer, GeneralStyle, ShapefileFeatureSource, Feature, MemoryFeatureSource } from 'ginkgoch-map';
 import Dropdown from '@/components/controls/Dropdown';
+import FeatureTable from '@/components/controls/FeatureTable';
 
 export default {
   name: "spatial-query",
@@ -43,7 +33,8 @@ export default {
     };
   },
   components: {
-    'dropdown': Dropdown
+    'dropdown': Dropdown,
+    'feature-table': FeatureTable
   },
   async mounted() {
     this.map = L.map("mapContainer").setView([0, 0], 2);
@@ -80,7 +71,7 @@ export default {
       this.highlightSource.internalFeatures.push(...highlightFeatures);
       this.gridLayer.redraw();
 
-      this.tableSource = featuresToTableSource(highlightFeatures);
+      this.tableSource = highlightFeatures;
       
       let highlightsLength = this.highlightSource.internalFeatures.length;
       this.summary = highlightsLength > 0 ? `There are ${highlightsLength} features found.` : '';
@@ -93,22 +84,4 @@ function getQueryTargetFeature() {
   let queryTarget = Feature.create(JSON.parse(jsonContent));
   return queryTarget;
 }
-
-function featuresToTableSource(features) {
-  let tableSource = [];
-  if (features.length > 0) {
-    tableSource.push(features[0].properties.keys());
-  }
-
-  features.forEach(f => tableSource.push(f.properties.values()));
-
-  return tableSource;
-}
 </script>
-
-<style>
-.table-container {
-  max-height: 400px;
-  overflow-y: auto;
-}
-</style>
