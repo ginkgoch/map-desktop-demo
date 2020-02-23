@@ -1,7 +1,10 @@
 <template>
-  <pre>
-      <code class="language-html" v-html="sourceCode"></code>
-  </pre>
+  <section>
+      <pre v-for="(block, i) of sourceCode" :key="i">
+        <span>{{ block.name }}</span>
+        <code class="language-javascript" v-html="block.content" />
+      </pre>
+  </section>
 </template>
 
 <script>
@@ -28,7 +31,24 @@ export default {
             if (!fs.existsSync(filePath)) { return; }
 
             let code = fs.readFileSync(filePath).toString();
-            this.sourceCode = highlight.highlightAuto(code).value;
+            let codeBlocks = this.$fetchBlocks(code);
+            codeBlocks.forEach(c => c.content = highlight.highlightAuto(c.content).value.trim());
+            this.sourceCode = codeBlocks;
+        },
+        $fetchBlocks(code) {
+            let begin = "<script>"; 
+            let end = "/script>";
+            let codeBegin = code.indexOf(begin);
+            let codeEnd = code.indexOf(end);
+
+            if (codeBegin !== -1 && codeEnd !== -1) {
+                codeBegin += begin.length;
+                let codeBlock = code.slice(codeBegin, codeEnd - 1);
+                return [{ content: codeBlock }];
+            }
+            else {
+                return [{ content: code }];
+            }
         }
     },
     watch: {
