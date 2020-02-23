@@ -28,6 +28,7 @@ import { FeatureGridLayer, MapUtils } from "ginkgoch-leaflet-extensions";
 
 export default {
   name: "class-break-style",
+  source: '/styles/ClassBreakStyle',
   desc: `Use class break style to render a thematic map.`,
   detail: `Class break style is used to render a thematic map based on features' break down values.`,
 

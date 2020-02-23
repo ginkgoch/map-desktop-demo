@@ -22,6 +22,7 @@ import FeatureTable from '@/components/controls/FeatureTable';
 export default {
   name: "geojson-source",
   title: "GeoJSON Source",
+  source: '/sources/GeoJSON',
   desc: `Use GeoJSON source to query and render on map.`,
   detail: `GeoJSON source is used to fetch features from a specific delimited file on your local machine; it exposes a set of API to query and render on map.`,
   components: { 'feature-table': FeatureTable },

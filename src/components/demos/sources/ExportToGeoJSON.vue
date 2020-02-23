@@ -21,6 +21,7 @@ import { FeatureLayer, GeneralStyle, ShapefileFeatureSource, Feature, MemoryFeat
 export default {
   name: "export-to-geojson",
   title: 'Export to GeoJSON',
+  source: '/sources/ExportToGeoJSON',
   desc: `Export features into GeoJSON`,
   detail: `Convert the highlighted features into GeoJSON format and store as a new file.`,
   data() {

@@ -23,6 +23,7 @@ let Manchester = new Point(2.2727, 53.3588);
 
 export default {
   name: "geocentric-line",
+  source: '/geoms/GeocentricLine',
   desc: "Find geocentric line between two points.",
   detail: "A Geocentric Line is any circle that circumnavigates the Earth and passes through the center of the Earth. Click the button below to get the geocentric line between Beijing and LA.",
   data() {

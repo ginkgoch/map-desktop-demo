@@ -21,6 +21,7 @@ import { TextStyle } from 'ginkgoch-map';
 
 export default {
   name: "simple-styles",
+  source: '/styles/SimpleStyles',
   desc: `Use simple styles to render vectors.`,
   detail: `Simple styles include styles to render points, lines, areas and labels. The corresponding styles will be invalid when it doesn't match the vector types.`,
   data() {

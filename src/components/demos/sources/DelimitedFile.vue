@@ -21,6 +21,7 @@ import FeatureTable from '@/components/controls/FeatureTable';
 
 export default {
   name: "csv-source",
+  source: '/sources/DelimitedFile',
   title: "Delimited File Source",
   desc: `Use CSV source to query and render on map.`,
   detail: `CSV source is used to fetch features from a specific delimited file on your local machine; it exposes a set of API to query and render on map.`,

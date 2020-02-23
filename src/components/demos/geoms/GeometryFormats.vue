@@ -38,6 +38,7 @@ let geomLayer = null;
 
 export default {
   name: "geometry-formats",
+  source: '/geoms/GeometryFormats',
   desc: "Converts geometry into various formats.",
   detail: "WKT, WKB, GeoJSON are supported format we can convert from/to.",
   data() {

@@ -26,6 +26,7 @@ import Table from '@/components/controls/Table';
 export default {
   name: "shapefile-source",
   title: "Shapefile Source",
+  source: '/sources/Shapefile',
   desc: `Use shapefile source to query and render on map.`,
   detail: `Shapefile source is used to fetch features from a specific shape file on your local machine; it exposes a set of API to query and render on map.`,
   components: { 'Table': Table },

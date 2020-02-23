@@ -24,6 +24,7 @@ import { FeatureGridLayer, MapUtils } from "ginkgoch-leaflet-extensions";
 
 export default {
   name: "value-based-style",
+  source: '/styles/ValueBasedStyle',
   desc: `Use value based style to render a thematic map.`,
   detail: `Value style is used to render a thematic map based on one of feature's properties.`,
 

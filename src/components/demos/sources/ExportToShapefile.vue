@@ -21,6 +21,7 @@ import { FeatureLayer, GeneralStyle, ShapefileFeatureSource, Feature, MemoryFeat
 export default {
   name: "export-to-shp",
   title: 'Export to Shapefile',
+  source: '/sources/ExportToShapefile',
   desc: `Export features into Shapefile`,
   detail: `Convert the highlighted features into Shapefile format and store as a new file.`,
   data() {

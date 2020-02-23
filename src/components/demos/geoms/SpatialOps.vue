@@ -39,6 +39,7 @@ let geomTarget = [];
 
 export default {
   name: "geospatial-ops",
+  source: '/geoms/SpatialOps',
   desc: "Apply Geospatial Operations on one or more geometries.",
   detail: `Buffer, difference, convexhull, intersection, union and normalize are all build-in geospatial operations. Select one of the operations in the dropdown and click <b>Execute</b> button.`,
   data() {

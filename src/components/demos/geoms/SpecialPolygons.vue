@@ -22,6 +22,7 @@ let geomLayer = null;
 
 export default {
   name: "special-polygons",
+  source: '/geoms/SpecialPolygons',
   desc: "Plot build-in special polygons on map.",
   detail:
     "Star, Square, Rectangle, Circle, Ellipse are all build-in special polygons. We are going to add those geometries by clicking the buttons below.",

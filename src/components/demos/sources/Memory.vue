@@ -16,6 +16,7 @@ import { MemoryFeatureSource, FeatureLayer, GeometryFactory, Feature, Projection
 export default {
   name: "memory-source",
   title: "In-Memory Source",
+  source: '/sources/Memory',
   desc: `Use in-memory source to query and render on map.`,
   detail: `In-memory source is used to temporarily store features in memory, and expose a set of API to query and render on map.`,
   data() {

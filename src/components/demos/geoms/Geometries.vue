@@ -24,6 +24,7 @@ let geomLayer = null;
 export default {
   name: "normal-geometry",
   desc: "Plot normal geometries on map.",
+  source: '/geoms/Geometries',
   detail:
     "Point, LineString, Polygon, MultiPoint, MultiLineString, MultiPolygon as well as GeometryCollection are all supported normal geometries. We are going to add those geometries by clicking the buttons below.",
   data() {

@@ -23,6 +23,7 @@ import FeatureTable from '@/components/controls/FeatureTable';
 
 export default {
   name: "spatial-query",
+  source: '/analysis/SpatialQuery',
   desc: `Query features from a specific source based on a relationship to a feature.`,
   detail: `Built-in relationship includes disjoint, intersection, overlap, touch and within.`,
   data() {

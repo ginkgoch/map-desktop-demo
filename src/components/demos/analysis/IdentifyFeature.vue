@@ -18,6 +18,7 @@ import FeatureTable from '@/components/controls/FeatureTable';
 
 export default {
   name: "identify-feature",
+  source: '/analysis/IdentifyFeature',
   desc: `Identify a feature by clicking on the map`,
   detail: `Click on the map will trigger an event to query the clicked area, and find all the features near the clicked area.`,
   data() {

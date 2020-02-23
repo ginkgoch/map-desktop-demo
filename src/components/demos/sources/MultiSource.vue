@@ -17,6 +17,7 @@ import { FeatureGridLayer, MapUtils } from 'ginkgoch-leaflet-extensions';
 export default {
   name: "multi-source",
   title: "Multi Source",
+  source: '/sources/MultiSource',
   desc: `Use Multi source to query and render on map.`,
   detail: `Multi source is used to fetch features from a specific delimited file on your local machine; it exposes a set of API to query and render on map.`,
   data() {

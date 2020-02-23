@@ -21,6 +21,7 @@ import { FeatureLayer, GeneralStyle, ShapefileFeatureSource, Feature, MemoryFeat
 export default {
   name: "export-to-csv",
   title: 'Export to CSV',
+  source: '/sources/ExportToCSV',
   desc: `Export features into CSV`,
   detail: `Convert the highlighted features into CSV format and store as a new file.`,
   data() {

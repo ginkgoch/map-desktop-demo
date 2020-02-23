@@ -11,6 +11,7 @@ export default {
   path: "",
   title: "Hello Map",
   route: "HelloMap",
+  source: '/HelloMap',
   desc: `Build a simple desktop map application with few lines of code.`,
   detail: `This is a pure map with Leaflet integrated. We will show you all the <b>Ginkgoch MAP SDK</b> features based on this demo.`,
   data() {
