@@ -1,6 +1,6 @@
 <template>
   <pre>
-      <code class="language-html">{{ sourceCode }}</code>
+      <code class="language-html" v-html="sourceCode"></code>
   </pre>
 </template>
 
@@ -8,7 +8,6 @@
 import fs from 'fs';
 import 'highlight.js/styles/atom-one-light.css';
 import highlight from 'highlight.js';
-import highlightjsLineNumbers from 'highlightjs-line-numbers2.js';
 import DemoUtils from '../../shared/DemoUtils';
 
 export default {
@@ -19,19 +18,23 @@ export default {
         }
     },
     mounted() {
-        if (this.path === undefined) {
-            return;
-        }
+        this.$syncSourceCode(this.path);
+    },
+    methods: {
+        $syncSourceCode(path) {
+            if (path === undefined) { return; }
 
-        const filePath = DemoUtils.resolveExtraResourcePath('demos/' + this.path.replace(/^\//i, ''));
-        if (!fs.existsSync(filePath)) {
-            return;
-        }
+            const filePath = DemoUtils.resolveExtraResourcePath('demos/' + path.replace(/^\//i, '') + '.vue');
+            if (!fs.existsSync(filePath)) { return; }
 
-        this.sourceCode = fs.readFileSync(filePath).toString();
-        highlight.initHighlightingOnLoad();
-        highlightjsLineNumbers.init(highlight)
-        highlight.initLineNumbersOnLoad({singleLine: true});
+            let code = fs.readFileSync(filePath).toString();
+            this.sourceCode = highlight.highlightAuto(code).value;
+        }
+    },
+    watch: {
+        path(newValue) {
+            this.$syncSourceCode(newValue);
+        }
     }
 }
 </script>

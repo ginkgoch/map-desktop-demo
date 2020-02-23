@@ -23,9 +23,31 @@
         </div>
         <div class="col-md-8 demo-container">
           <h3>{{ title }}</h3>
-          <p class="text-muted">{{ desc }} <span v-html="detail" /></p>
+          <p class="text-muted">{{ desc }} <span v-html="detail" /> 
+            <a class="general" data-toggle="modal" data-target="#codeViewerModal" href="javascript:void(0)">
+              View Source Code
+            </a>
+          </p>
           <div class="container">
             <router-view></router-view>
+          </div>
+          <div class="modal fade" id="codeViewerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="codeViewerModalTitle">Source Code - {{ title }}</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body modal-code">
+                  <code-viewer :path="source" />
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -37,16 +59,20 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "leaflet/dist/leaflet.css";
 import sampleList from '../shared/DemoList';
+import CodeViewer from '@/components/controls/CodeViewer';
 
 function getDemoInfo(path) {
     path = path.replace('/map-app', '');
     path = path.replace(/^\//i, '');
     let demo = sampleList.find(s => s.path === path);
-    return { title: demo.title, desc: demo.desc, detail: demo.detail };
+    return { title: demo.title, desc: demo.desc, detail: demo.detail, source: demo.source };
 }
 
 export default {
   name: "map-app",
+  components: {
+    'code-viewer': CodeViewer
+  },
   data() {
     return {
       title: '',
@@ -109,11 +135,11 @@ ul p {
   line-height: 72px;
 }
 
-.side-panel a:link {
+.side-panel a:link, a.general:link {
   color: #2e983e;
 }
 
-.side-panel a:active {
+.side-panel a:active, a.general:active {
   color: #42b983;
 }
 
@@ -141,6 +167,11 @@ ul p {
 
 .demo-container h3, .demo-container p {
   margin: 0.5rem 0 0.5rem 1rem;
+}
+
+.modal-code {
+  max-height: 440px;
+  overflow-y: auto;
 }
 
 .btn {
