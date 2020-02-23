@@ -11,3 +11,17 @@ export default [
     ...StyleDemos,
     ...AnalysisDemos
 ];
+
+export let DemoCategories = {
+    'Getting Started': [HelloMap],
+    'Geometries': GeomDemos,
+    'Feature Sources': SourceDemos,
+    'Styles': StyleDemos,
+    'Spatial Analysis': AnalysisDemos
+}
+
+export let DemoColumnConfig = [
+    ['Getting Started', 'Geometries'],
+    ['Feature Sources'],
+    ['Styles', 'Spatial Analysis']
+];
