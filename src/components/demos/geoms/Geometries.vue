@@ -40,17 +40,9 @@ export default {
   },
   mounted() {
     let map = L.map("mapContainer").setView([0, 0], 3);
-    L.tileLayer(Constants.OSM_SERVICE_URL, {
-      attribution: Constants.OSM_ATTRIBUTION
-    }).addTo(map);
+    L.tileLayer(Constants.OSM_SERVICE_URL, Constants.DEFAULT_OSM_OPTIONS).addTo(map);
 
-    geomLayer = L.geoJSON([], {
-      style: Constants.DEFAULT_GEO_JSON_STYLE,
-      pointToLayer(feature, latlng) {
-        return L.circleMarker(latlng, Constants.DEFAULT_GEO_JSON_STYLE);
-      }
-    });
-
+    geomLayer = L.geoJSON([], Constants.DEFAULT_GEO_JSON_OPTIONS);
     geomLayer.addTo(map);
   },
   methods: {
