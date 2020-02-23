@@ -2,7 +2,7 @@
   <div>
     <div id="mapContainer"></div>
     <section>
-      <button @click="saveAsGeoJSONFile" class="btn btn-outline-success">Save as GeoJSON File</button>
+      <button @click="saveAsCSVFile" class="btn btn-outline-success">Save as CSV File</button>
       <p><small class="text-muted text-sm">{{ summary }}</small></p>
     </section>
   </div>
@@ -16,13 +16,13 @@ import { remote } from 'electron';
 import Constants from "../../../shared/Constants";
 import DemoUtils from '../../../shared/DemoUtils';
 import { FeatureGridLayer, MapUtils } from 'ginkgoch-leaflet-extensions';
-import { FeatureLayer, GeneralStyle, ShapefileFeatureSource, Feature, MemoryFeatureSource, FeatureCollection, Projection } from 'ginkgoch-map';
+import { FeatureLayer, GeneralStyle, ShapefileFeatureSource, Feature, MemoryFeatureSource, CSVFeatureSource } from 'ginkgoch-map';
 
 export default {
-  name: "export-to-geojson",
-  title: 'Export to GeoJSON',
-  desc: `Export features into GeoJSON`,
-  detail: `Convert the highlighted features into GeoJSON format and store as a new file.`,
+  name: "export-to-csv",
+  title: 'Export to CSV',
+  desc: `Export features into CSV`,
+  detail: `Convert the highlighted features into CSV format and store as a new file.`,
   data() {
     return {
       summary: ''
@@ -57,19 +57,16 @@ export default {
     MapUtils.setEnvelope(this.map, envelope);
   },
   methods: {
-    async saveAsGeoJSONFile() {
+    async saveAsCSVFile() {
       let { dialog } = remote;
-      let defaultPath = path.resolve('cntry02.json');
-      let filePath = dialog.showSaveDialogSync({ defaultPath, filters: [{ extensions: ['.json'] }] });
+      let defaultPath = path.resolve('~/cntry02.csv');
+      let filePath = dialog.showSaveDialogSync({ defaultPath, filters: [{ extensions: ['.csv'] }] });
       if (filePath !== undefined) {
-        // From the new GeoJSON specification, GeoJSON will only support WGS84 CRS.
-        let projection = new Projection('WGS84', 'EPSG:3857');
-
-        let features = this.highlightSource.internalFeatures.map(f => { f.geometry = projection.inverse(f.geometry); return f; });
-        let featureCollection = new FeatureCollection(features);
-        let geoJSON = featureCollection.toJSON();
-        fs.writeFileSync(filePath, JSON.stringify(geoJSON));
-        this.summary = `GeoJSON is successfully saved at ${filePath}.`;
+        let features = this.highlightSource.internalFeatures;
+        let fields = await this.featureSource.fields();
+        let fieldOptions = { fields: fields.map(f => f.name), geomField: 'WKT' };
+        CSVFeatureSource.create(filePath, ',', fieldOptions, features);
+        this.summary = `CSV is successfully saved at ${filePath}.`;
       }
     }
   }
