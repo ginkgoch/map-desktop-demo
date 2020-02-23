@@ -2,7 +2,7 @@ import _ from 'lodash';
 import demos, { DemoCategories, DemoColumnConfig } from '../components/demos';
 
 function getExampleInfo(component) {
-    let { name, route, title, path, desc, detail } = component;
+    let { name, route, title, path, desc, detail, source } = component;
     if (name === undefined) {
         throw new Error('name not defined.');
     }
@@ -12,7 +12,7 @@ function getExampleInfo(component) {
     route = route || _.chain(name).camelCase().capitalize().value();
     desc = desc || '';
     detail = detail || '';
-    return { route, title, path, desc, detail, component };
+    return { route, title, path, desc, detail, component, source };
 }
 
 export default demos.map(getExampleInfo);
