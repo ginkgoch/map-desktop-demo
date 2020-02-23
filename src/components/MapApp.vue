@@ -52,6 +52,7 @@ export default {
       title: '',
       desc: '',
       detail: '',
+      source: '',
       sampleList
     };
   },
@@ -73,6 +74,7 @@ export default {
       this.title = demo.title;
       this.desc = demo.desc;
       this.detail = demo.detail;
+      this.source = demo.source;
     }
   }
 };
