@@ -19,8 +19,6 @@ import _ from 'lodash';
 import Constants from "../../../shared/Constants";
 import { Point, LineString, Polygon, LinearRing, MultiPoint, MultiLineString, MultiPolygon, GeometryCollection } from "ginkgoch-map";
 
-let geomLayer = null;
-
 export default {
   name: "normal-geometry",
   desc: "Plot normal geometries on map.",
@@ -43,12 +41,12 @@ export default {
     let map = L.map("mapContainer").setView([0, 0], 3);
     L.tileLayer(Constants.OSM_SERVICE_URL, Constants.DEFAULT_OSM_OPTIONS).addTo(map);
 
-    geomLayer = L.geoJSON([], Constants.DEFAULT_GEO_JSON_OPTIONS);
-    geomLayer.addTo(map);
+    this.geomLayer = L.geoJSON([], Constants.DEFAULT_GEO_JSON_OPTIONS);
+    this.geomLayer.addTo(map);
   },
   methods: {
     plotGeometry(e) {
-      geomLayer.clearLayers();
+      this.geomLayer.clearLayers();
 
       let geom = undefined;
       let eventName = e.target.innerText.replace(/Plot\s/i, "");
@@ -84,12 +82,9 @@ export default {
       }
 
       if (geom !== undefined) {
-        geomLayer.addData(geom.toJSON());
+        this.geomLayer.addData(geom.toJSON());
       }
     }
   }
 };
 </script>
-
-<style>
-</style>
