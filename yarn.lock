@@ -880,6 +880,18 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
+"@types/jsts@^0.17.0":
+  version "0.17.2"
+  resolved "https://registry.yarnpkg.com/@types/jsts/-/jsts-0.17.2.tgz#0686864d3151255ffd0bd8dd3eb95f48fe655fe9"
+  integrity sha512-xGSBvyBTOJcNaanAxRasUGhw6GyraCpAXn9hMYruOEbl+jOXHDrlMsYjR5j0wYlJiaLdZi62w36C83uCWGTcxg==
+  dependencies:
+    "@types/openlayers" "*"
+
+"@types/lodash@^4.14.136":
+  version "4.14.149"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.149.tgz#1342d63d948c6062838fbf961012f74d4e638440"
+  integrity sha512-ijGqzZt/b7BfzcK9vTrS6MFljQRPn5BFWOx8oE0GYxribu6uV+aA9zZuXI1zc/etK9E8nrgdoF2+LgUw7+9tJQ==
+
 "@types/minimatch@*":
   version "3.0.3"
   resolved "https://registry.npm.taobao.org/@types/minimatch/download/@types/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
@@ -895,10 +907,25 @@
   resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-10.17.15.tgz#bfff4e23e9e70be6eec450419d51e18de1daf8e7"
   integrity sha1-v/9OI+nnC+buxFBBnVHhjeHa+Oc=
 
+"@types/node@^12.6.8":
+  version "12.12.27"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.12.27.tgz#d7506f73160ad30fcebbcf5b8b7d2d976e649e42"
+  integrity sha512-odQFl/+B9idbdS0e8IxDl2ia/LP8KZLXhV3BUeI98TrZp0uoIzQPhGd+5EtzHmT0SMOIaPd7jfz6pOHLWTtl7A==
+
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
   resolved "https://registry.npm.taobao.org/@types/normalize-package-data/download/@types/normalize-package-data-2.4.0.tgz#e486d0d97396d79beedd0a6e33f4534ff6b4973e"
   integrity sha1-5IbQ2XOW15vu3QpuM/RTT/a0lz4=
+
+"@types/openlayers@*":
+  version "4.6.17"
+  resolved "https://registry.yarnpkg.com/@types/openlayers/-/openlayers-4.6.17.tgz#39a8dce631e284a26cf0958664509932e6cd7c7d"
+  integrity sha512-vCCV5MY3XRmHyED1ndHxXJ/5IpeA3pX9J6IKZnMY+uTerhYNfG7pM451dgS90tSkBBxszd8ETPrF5ggQ9mqwlA==
+
+"@types/proj4@^2.5.0":
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/@types/proj4/-/proj4-2.5.0.tgz#40f1ed1cb9ef66e442ab6e57eba32eadc0f0501a"
+  integrity sha512-9bR9qvg4wZE6UiIlmhodCOZ2r38SeN8T35SsmMDuIMfACxxaMvIwiwoTJnEA9f/KEhL+BQSuD+arbZucUzYu7w==
 
 "@types/q@^1.5.1":
   version "1.5.2"
@@ -1833,6 +1860,11 @@ boolbase@^1.0.0, boolbase@~1.0.0:
   version "1.0.0"
   resolved "https://registry.npm.taobao.org/boolbase/download/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha1-aN/1++YMUes3cl6p4+0xDcwed24=
+
+bootstrap@^4.4.1:
+  version "4.4.1"
+  resolved "https://registry.npm.taobao.org/bootstrap/download/bootstrap-4.4.1.tgz#8582960eea0c5cd2bede84d8b0baf3789c3e8b01"
+  integrity sha1-hYKWDuoMXNK+3oTYsLrzeJw+iwE=
 
 boxen@^3.0.0:
   version "3.2.0"
@@ -2994,6 +3026,11 @@ csso@^4.0.2:
   integrity sha1-5fgas6Vrju+38Aks5yeTKfRU3j0=
   dependencies:
     css-tree "1.0.0-alpha.37"
+
+csv-parse@^4.8.3:
+  version "4.8.5"
+  resolved "https://registry.yarnpkg.com/csv-parse/-/csv-parse-4.8.5.tgz#32e92a0e0acedab141bd5c5a3ad6fc3316f2c72d"
+  integrity sha512-rpsLmlLWJZifmLzZEVGbZ9phWnJyi+cCbCGYr4vX2NaHFtgbmQPFk+WmMkmMkQXgsIUn6CgnK9cTuUAfFjoXbA==
 
 current-script-polyfill@^1.0.0:
   version "1.0.0"
@@ -4288,6 +4325,61 @@ getpass@^0.1.1:
   dependencies:
     assert-plus "^1.0.0"
 
+ginkgoch-buffer-io@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/ginkgoch-buffer-io/-/ginkgoch-buffer-io-1.1.3.tgz#d200bd1b0d3addbc2c7b977f055b5162432784d2"
+  integrity sha512-vKaoZKFCRgUmEMOjMpZmSanjBNMce2XreTrbL6uYvBRvmp6Ng4tlI4kKnTfM+m38zDF3I8HESJEAkpO/4sQxWg==
+
+ginkgoch-filestream@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/ginkgoch-filestream/-/ginkgoch-filestream-1.0.0.tgz#3c10c5fbf071923996a2ca5fd542286ac25811f2"
+  integrity sha512-gJQTIhyM6O543eTuk6itAhBhq62qdPIL5pWYjPfUDVuxTj7yLw2JQW5/vlm9yw+x3WJv0BfnwQCJzp7nUDmOtw==
+
+ginkgoch-geom@^1.10.0:
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/ginkgoch-geom/-/ginkgoch-geom-1.10.0.tgz#6d2882f3c87dc578ac9da2a7a1518b5a70be086a"
+  integrity sha512-3V9dVB+TLqBmLLTBz2efWkk7sRZE57zt1dgZGofBIak8K+I6IDbxIj6+C2oV+rdCgjJgl0iqgtQQrtQ93pMf3w==
+  dependencies:
+    "@types/jsts" "^0.17.0"
+    "@types/lodash" "^4.14.136"
+    "@types/node" "^12.6.8"
+    ginkgoch-buffer-io "^1.1.3"
+    jsts "^2.0.6"
+    lodash "^4.17.15"
+
+ginkgoch-leaflet-extensions@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/ginkgoch-leaflet-extensions/-/ginkgoch-leaflet-extensions-1.1.0.tgz#044ed4e31eb6dfd8efd6651fb0ce4d85fe3b5bf0"
+  integrity sha512-mMS/p/eRWb7KvzSlwCaMeBjJtI2eRNk2nZ2hpqVuP5PKJCPDCZTW6Cd43sACekScmrZ72WJ+VnDNt8GF9YyhcA==
+
+ginkgoch-map@^1.11.0:
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/ginkgoch-map/-/ginkgoch-map-1.11.0.tgz#b45acc49c3d6f401c877d4e8e0f68d7b8b0830bc"
+  integrity sha512-8a/ox9EWbe+a6r//3g+agHBJLTOI4IaYAbqtaZrUCr4OdrM7CP1+SYgkWfgkWRk04VdTkd7BpHQ64ntoCdsNYQ==
+  dependencies:
+    "@types/lodash" "^4.14.136"
+    "@types/proj4" "^2.5.0"
+    csv-parse "^4.8.3"
+    ginkgoch-buffer-io "^1.1.3"
+    ginkgoch-filestream "^1.0.0"
+    ginkgoch-geom "^1.10.0"
+    ginkgoch-shapefile "^2.6.0"
+    lodash "^4.17.15"
+    proj4 "^2.5.0"
+
+ginkgoch-shapefile@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/ginkgoch-shapefile/-/ginkgoch-shapefile-2.6.0.tgz#7f5aa649cee48490ad6cddeed88d6d483a9cffba"
+  integrity sha512-YvMukwMNX0wc3Eh+ogAd7g6OYtA5QYge09r/ieYjp2aSprzxM6jddXaxWpQ/xng8Omc8tiqIsegWrECEjCsw2g==
+  dependencies:
+    "@types/jsts" "^0.17.0"
+    "@types/lodash" "^4.14.136"
+    "@types/node" "^12.6.8"
+    ginkgoch-buffer-io "^1.1.3"
+    ginkgoch-filestream "^1.0.0"
+    ginkgoch-geom "^1.10.0"
+    lodash "^4.17.14"
+
 glob-parent@^3.1.0:
   version "3.1.0"
   resolved "https://registry.npm.taobao.org/glob-parent/download/glob-parent-3.1.0.tgz?cache=0&sync_timestamp=1569109071634&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fglob-parent%2Fdownload%2Fglob-parent-3.1.0.tgz#9e6af6299d8d3bd2bd40430832bd113df906c5ae"
@@ -5341,6 +5433,11 @@ jest-worker@^25.1.0:
     merge-stream "^2.0.0"
     supports-color "^7.0.0"
 
+jquery@^3.4.1:
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.4.1.tgz#714f1f8d9dde4bdfa55764ba37ef214630d80ef2"
+  integrity sha512-36+AdBzCL+y6qjw5Tx7HgzeGCzC81MDDgaUP8ld2zhx58HdqXGoBd+tHdrBMiyjGQs0Hxs/MLZTu/eHNJJuWPw==
+
 js-message@1.0.5:
   version "1.0.5"
   resolved "https://registry.npm.taobao.org/js-message/download/js-message-1.0.5.tgz#2300d24b1af08e89dd095bc1a4c9c9cfcb892d15"
@@ -5452,6 +5549,11 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
+jsts@^2.0.6:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/jsts/-/jsts-2.1.0.tgz#6a724e9d38de8a69585f7ace09d87bf4bbda68e5"
+  integrity sha512-gxv7hw5FmXwoieHBNKyrl+DZVp1aaJbUPDgPRGf54y7owWoq75CWwL6VCmdKxt5jaMHh9CKOaG1u/WZJRUM5NA==
+
 jszip@^3.1.0:
   version "3.2.2"
   resolved "https://registry.npm.taobao.org/jszip/download/jszip-3.2.2.tgz#b143816df7e106a9597a94c77493385adca5bd1d"
@@ -5538,6 +5640,11 @@ lcid@^2.0.0:
   integrity sha1-bvXS32DlL4LrIopMNz6NHzlyU88=
   dependencies:
     invert-kv "^2.0.0"
+
+leaflet@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.npm.taobao.org/leaflet/download/leaflet-1.6.0.tgz#aecbb044b949ec29469eeb31c77a88e2f448f308"
+  integrity sha1-rsuwRLlJ7ClGnusxx3qI4vRI8wg=
 
 leven@^3.1.0:
   version "3.1.0"
@@ -5863,6 +5970,11 @@ methods@~1.1.2:
   version "1.1.2"
   resolved "https://registry.npm.taobao.org/methods/download/methods-1.1.2.tgz#5529a4d67654134edcc5266656835b0f851afcee"
   integrity sha1-VSmk1nZUE07cxSZmVoNbD4Ua/O4=
+
+mgrs@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/mgrs/-/mgrs-1.0.0.tgz#fb91588e78c90025672395cb40b25f7cd6ad1829"
+  integrity sha1-+5FYjnjJACVnI5XLQLJffNatGCk=
 
 micromatch@^3.1.10, micromatch@^3.1.4:
   version "3.1.10"
@@ -6810,6 +6922,11 @@ pnp-webpack-plugin@^1.6.0:
   dependencies:
     ts-pnp "^1.1.2"
 
+popper.js@^1.16.1:
+  version "1.16.1"
+  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.16.1.tgz#2a223cb3dc7b6213d740e40372be40de43e65b1b"
+  integrity sha512-Wb4p1J4zyFTbM+u6WuO4XstYx4Ky9Cewe4DWrel7B0w6VVICvPwdOpotjzcf6eD8TsckVnIMNONQyPIUFOUbCQ==
+
 portfinder@^1.0.16, portfinder@^1.0.25:
   version "1.0.25"
   resolved "https://registry.npm.taobao.org/portfinder/download/portfinder-1.0.25.tgz?cache=0&sync_timestamp=1571176857935&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fportfinder%2Fdownload%2Fportfinder-1.0.25.tgz#254fd337ffba869f4b9d37edc298059cb4d35eca"
@@ -7232,6 +7349,14 @@ progress@^2.0.0:
   version "2.0.3"
   resolved "https://registry.npm.taobao.org/progress/download/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha1-foz42PW48jnBvGi+tOt4Vn1XLvg=
+
+proj4@^2.5.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/proj4/-/proj4-2.6.0.tgz#154c0e8eeb1aaae9914ec387753396cbc003ae72"
+  integrity sha512-ll2WyehUFOyzEZtN8hAiOTmZpuDCN5V+4A/HjhPbhlwVwlsFKnIHSZ3l3uhzgDndHjoL2MyERFGe9VmXN4rYUg==
+  dependencies:
+    mgrs "1.0.0"
+    wkt-parser "^1.2.0"
 
 promise-inflight@^1.0.1:
   version "1.0.1"
@@ -9203,6 +9328,11 @@ vue-loader@^15.8.3:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
+vue-router@^3.1.5:
+  version "3.1.5"
+  resolved "https://registry.npm.taobao.org/vue-router/download/vue-router-3.1.5.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-router%2Fdownload%2Fvue-router-3.1.5.tgz#ff29b8a1e1306c526b52d4dc0532109f16c41231"
+  integrity sha1-/ym4oeEwbFJrUtTcBTIQnxbEEjE=
+
 vue-style-loader@^4.1.0, vue-style-loader@^4.1.2:
   version "4.1.2"
   resolved "https://registry.npm.taobao.org/vue-style-loader/download/vue-style-loader-4.1.2.tgz#dedf349806f25ceb4e64f3ad7c0a44fba735fcf8"
@@ -9466,6 +9596,11 @@ widest-line@^2.0.0:
   integrity sha1-dDh2RzDsfvQ4HOTfgvuYpTFCo/w=
   dependencies:
     string-width "^2.1.1"
+
+wkt-parser@^1.2.0:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/wkt-parser/-/wkt-parser-1.2.3.tgz#240fe1dacc816bfe5674b66180041059eaa9a9ba"
+  integrity sha512-s7zrOedGuHbbzMaQOuf8HacuCYp3LmmrHjkkN//7UEAzsYz7xJ6J+j/84ZWZkQcrRqi3xXyuc4odPHj7PEB0bw==
 
 word-wrap@~1.2.3:
   version "1.2.3"
