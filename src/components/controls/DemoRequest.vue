@@ -18,6 +18,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 import _ from 'lodash';
 import AV from 'leancloud-storage';
 
