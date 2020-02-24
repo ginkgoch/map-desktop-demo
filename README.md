@@ -11,9 +11,9 @@ This feature demo application is built with `electron` that support to run on `m
 
 Go to the release page for the latest update. OR download directly by the links below.
 
-* For macOS [WIP...]
-* For Windows [WIP...]
-* For Linux [WIP...]
+* [Feature Demos for macOS](https://ginkgoch.s3.us-east-2.amazonaws.com/desktop-demo/ginkgoch-feature-demos-for-desktop-1.0.0-mac.zip)
+* [Feature Demos for Linux](https://ginkgoch.s3.us-east-2.amazonaws.com/desktop-demo/ginkgoch-feature-demos-for-desktop-1.0.0.AppImage)
+* Feature Demos for Windows [WIP...]
 
 ## Features
 The first release includes following categories and I think they are pretty much the necessary features to build a basic GIS applications.
