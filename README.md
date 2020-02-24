@@ -33,6 +33,11 @@ yarn
 yarn electron:serve
 ```
 
+## Build Executable
+```
+yarn electron:build
+```
+
 ## Request Demos or Prototypes
 It is welcome to submit a new demo request. I will consider it carefully to build one if it is great feature and simple enough to show the power of Ginkgoch MAP SDK.
 
@@ -43,4 +48,4 @@ There are several ways you could request.
 3. This feature demo is open source project on github. So it is welcome to submit issues there.
 4. Email me directly by [ginkgoch@outlook.com](mailto:ginkgoch@outlook.com).
 
-
+Happy Mapping!
