@@ -19,6 +19,13 @@
         </div>
       </div>
     </section>
+
+    <section class="demo-request">
+      <h3>Demo Request &amp; Feedback</h3>
+      <p>Want to get more? Feel free to leave me a message to request new demos, prototypes.<br>Feedback or issue report are also welcome.</p>
+      <demo-request class="col-md-6 offset-md-3" />
+    </section>
+    
     <section class="ginkgoch-links">
       <h3>Ginkgoch Links</h3>
       <ul>
@@ -33,12 +40,12 @@
 
 <script>
 import DemoList, { demoCategories, demoColumnConfig } from '../shared/DemoList';
+import DemoRequest from '@/components/controls/DemoRequest';
 
 export default {
   name: 'Welcome',
-  props: {
-    msg: String
-  },
+  props: { msg: String },
+  components: { 'demo-request': DemoRequest },
   data() {
     return {
       demos: DemoList,
@@ -67,7 +74,7 @@ a {
 }
 
 .hello img {
-  margin-top: 60px;
+  margin: 60px 0;
 }
 
 .demo-category-title {
@@ -79,5 +86,9 @@ ul li.demo-item {
   display: block;
   text-align: left;
   margin: 4px 14px;
+}
+
+.ginkgoch-links {
+  margin-bottom: 60px;
 }
 </style>
