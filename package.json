@@ -10,9 +10,11 @@
     "electron:serve": "vue-cli-service electron:serve",
     "postinstall": "electron-builder install-app-deps",
     "postuninstall": "electron-builder install-app-deps",
-    "sync-source": "rm -r ./extraResources/demos/* & cp -r ./src/components/demos/ ./extraResources/demos/"
+    "sync-source": "rm -r ./extraResources/demos/* & cp -r ./src/components/demos/ ./extraResources/demos/",
+    "download-win": "electron-download --mirror=https://npm.taobao.org/mirrors/electron/ --version=6.1.8 --platform=win32 --arch=x64"
   },
   "main": "background.js",
+  "dependencies": {},
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.2.0",
     "@vue/cli-plugin-eslint": "~4.2.0",
@@ -21,6 +23,7 @@
     "bootstrap": "^4.4.1",
     "core-js": "^3.6.4",
     "electron": "^6.0.0",
+    "electron-download": "^4.1.1",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.1.2",
     "ginkgoch-leaflet-extensions": "^1.2.6",

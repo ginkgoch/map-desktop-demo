@@ -24,6 +24,15 @@ The first release includes following categories and I think they are pretty much
 
 ![screenshot-1.png](./docs/screenshot-1.png)
 
+## Debug Demo
+Execute the commands below to clone the repo and launch debug env.
+```
+git clone git@github.com:ginkgoch/map-desktop-demo.git
+cd map-desktop-demo
+yarn
+yarn electron:serve
+```
+
 ## Request Demos or Prototypes
 It is welcome to submit a new demo request. I will consider it carefully to build one if it is great feature and simple enough to show the power of Ginkgoch MAP SDK.
 
