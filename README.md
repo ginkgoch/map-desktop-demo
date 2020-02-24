@@ -1,24 +1,37 @@
-# elvue
+# Feature Demos for Desktop
 
-## Project setup
-```
-yarn install
-```
+## Overview
+This is Ginkgoch MAP SDK feature demos for desktop. It includes all basic features for building a GIS application. All demos are designed as few clicks to represent what it can be done.
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+Here is an overview of all the demos.
+![overview.png](./docs/overview.png)
 
-### Compiles and minifies for production
-```
-yarn build
-```
+## Download
+This feature demo application is built with `electron` that support to run on `macOS`, `Windows` and `Linux`.
 
-### Lints and fixes files
-```
-yarn lint
-```
+Go to the release page for the latest update. OR download directly by the links below.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+* For macOS [WIP...]
+* For Windows [WIP...]
+* For Linux [WIP...]
+
+## Features
+The first release includes following categories and I think they are pretty much the necessary features to build a basic GIS applications.
+* `Geometries` - introduce how to use build-in geometries; create special polygons like star, square, circle etc; work with spatial operations as well as convert geometries to/from various data formats.
+* `Feature Sources` - introduce how to work with various data sources on querying, analysis, exporting to another source type. Also introduce how to work with `Leaflet` to create grid tiles to form an interactive map.
+* `Styles` - introduce how to use various styles to build a beautiful map.
+* `Spatial Analysis` - introduce some basic features of spatial analysis. e.g. querying, identify as well as some aggregations functions.
+
+![screenshot-1.png](./docs/screenshot-1.png)
+
+## Request Demos or Prototypes
+It is welcome to submit a new demo request. I will consider it carefully to build one if it is great feature and simple enough to show the power of Ginkgoch MAP SDK.
+
+There are several ways you could request.
+1. In the downloaded application, the request form is in the middle of the page.
+    ![demo-request-form.png](./docs/demo-request-form.png)
+2. In my website home page [ginkgoch.com](https://ginkgoch.com), go to the `contact me` section.
+3. This feature demo is open source project on github. So it is welcome to submit issues there.
+4. Email me directly by [ginkgoch@outlook.com](mailto:ginkgoch@outlook.com).
+
+
