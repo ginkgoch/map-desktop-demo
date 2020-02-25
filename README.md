@@ -1,6 +1,8 @@
 # Feature Demos for Desktop
 
 ## Overview
+Learning feature with demos will be a pretty easy way to get started. Before learning from source code, a better approach is to take a look at what it can be done with an executable application.
+
 This is Ginkgoch MAP SDK feature demos for desktop. It includes all basic features for building a GIS application. All demos are designed as few clicks to represent what it can be done.
 
 Here is an overview of all the demos.
@@ -9,7 +11,7 @@ Here is an overview of all the demos.
 ## Download
 This feature demo application is built with `electron` that support to run on `macOS`, `Windows` and `Linux`.
 
-Go to the release page for the latest update. OR download directly by the links below.
+Go to the [release page](https://github.com/ginkgoch/map-desktop-demo/releases) for the latest update. OR download directly by the links below.
 
 * [Feature Demos for macOS](https://ginkgoch.s3.us-east-2.amazonaws.com/desktop-demo/ginkgoch-feature-demos-for-desktop-1.0.0-mac.zip)
 * [Feature Demos for Linux](https://ginkgoch.s3.us-east-2.amazonaws.com/desktop-demo/ginkgoch-feature-demos-for-desktop-1.0.0.AppImage)
