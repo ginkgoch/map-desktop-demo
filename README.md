@@ -1,9 +1,9 @@
 # Feature Demos for Desktop
 
 ## Overview
-Learning feature with demos will be a pretty easy way to get started. Before learning from source code, a better approach is to take a look at what it can be done with an executable application.
+This is [Ginkgoch MAP SDK](https://ginkgoch.com) feature demos for desktop. It includes all basic features for building a GIS application. All demos are designed as few clicks to represent what it can be done.
 
-This is Ginkgoch MAP SDK feature demos for desktop. It includes all basic features for building a GIS application. All demos are designed as few clicks to represent what it can be done.
+Learning feature with demos will be a pretty easy way to get started. Before learning from source code, please take a look at what it can be done with an executable application.
 
 Here is an overview of all the demos.
 ![overview.png](./docs/overview.png)
